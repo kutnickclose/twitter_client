@@ -1,0 +1,11 @@
+<%= link_to "Home", root_url%>
+
+<h1><%= @user.screen_name%>'s recent tweets</h1>
+
+<ul>
+	
+<% @tweets.each do |tweet| %>
+  <li><%= tweet.text %>
+<% end %>	
+
+</ul>
