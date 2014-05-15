@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514203009) do
+ActiveRecord::Schema.define(version: 20140515004908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "common_pair_followings", force: true do |t|
+    t.integer  "pair_id",                null: false
+    t.string   "screen_name",            null: false
+    t.integer  "following_id", limit: 8, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "common_pair_followings", ["following_id"], name: "index_common_pair_followings_on_following_id", using: :btree
+
+  create_table "pairs", force: true do |t|
+    t.string   "first_screen_name",  null: false
+    t.string   "second_screen_name", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "text",                       null: false

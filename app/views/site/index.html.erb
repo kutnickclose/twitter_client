@@ -11,15 +11,15 @@
 </form>
 
 <h1> Find common followers of two users </h1>
-<form action="<%= users_url %>" method="post" accept-charset="utf-8" id="common-followers">
+<form action="<%= pairs_url %>" method="post" accept-charset="utf-8" id="common-followers">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	
 	
-	<label for="twitter_username">First Twitter Username</label>
-	<input type="text" name="user[screen_name]" value="" id="twitter_username" placeholder="e.g. timkutnick" class="username" required>
+	<label for="twitter_username1">First Twitter Username</label>
+	<input type="text" name="pair[first_screen_name]" value="" id="twitter_username1" placeholder="e.g. timkutnick" class="username" required>
 	
-	
-	
+	<label for="twitter_username2">Second Twitter Username</label>
+	<input type="text" name="pair[second_screen_name]" value="" id="twitter_username2" placeholder="e.g. timkutnick" class="username" required>
 
 	<p><input type="submit" value="Submit"></p>
 </form>

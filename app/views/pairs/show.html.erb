@@ -1,0 +1,7 @@
+<h1> Commonly Followed Users by <%= @pair.first_screen_name%> and <%= @pair.second_screen_name%> </h1>
+
+<ol>
+<% @common_followings.each do |following| %>
+<li> <%= following.screen_name %></li>
+<% end %>
+</ol>

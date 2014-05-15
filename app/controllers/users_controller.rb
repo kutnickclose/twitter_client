@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     save_user_tweets(@user)
     @tweets = @user.tweets
-    puts @tweets
   end
   
   private
