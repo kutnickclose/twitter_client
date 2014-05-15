@@ -13,7 +13,7 @@ module UsersHelper
 
     baseurl = "https://api.twitter.com"
     path    = "/1.1/statuses/user_timeline.json"
-    query   = URI.encode_www_form("screen_name" => user.screen_name)
+    query   = URI.encode_www_form("screen_name" => user.screen_name.downcase)
     address = URI("#{baseurl}#{path}?#{query}")
     request = Net::HTTP::Get.new address.request_uri
 

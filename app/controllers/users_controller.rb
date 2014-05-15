@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    @user.screen_name = @user.screen_name.downcase
     if @user.save
       redirect_to user_url(@user)
     else
