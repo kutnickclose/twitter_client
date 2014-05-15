@@ -49,7 +49,7 @@ module PairsHelper
       if first_ids[following["id"]]
         following_to_save = CommonPairFollowing.new
         following_to_save.pair_id = pair.id
-        following_to_save.screen_name = following["screen_name"]
+        following_to_save.screen_name = following["screen_name"].downcase
         following_to_save.following_id = following["id"].to_i
         following_to_save.save
       end
